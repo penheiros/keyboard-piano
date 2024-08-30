@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=New+Amsterdam&display=swap');
+
+:root {
+    --pink-highlight: #c79beb;
+    --black-highlight: #171717;
+    --dark-pink-highlight: #5c4a6d;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+body {
+    height: 100vh;
+    background-color: var(--pink-highlight);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    font-family: 'Arial';
+}
+
+.piano {
+    width: 1071px;
+    height: 500px;
+    background-color: var(--black-highlight);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    border-left: 95px solid var(--black-highlight);
+    border-right: 95px solid var(--black-highlight);
+    box-shadow: -10px 10px 5px 5px rgba(70, 50, 77, 0.212);
+}
+
+.piano-title {
+    color: white;
+    padding: 0;
+    font-family: "New Amsterdam";
+    font-size: 4rem;
+    margin: 0;
+}

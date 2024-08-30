@@ -1,0 +1,142 @@
+.piano .upper-section {
+    width: 100%;
+    height: 100%;    
+    flex-direction: column;
+    display: flex;
+    justify-content: space-between;
+    align-items: end !important;
+
+}
+
+.upper-section .note-container {
+    width: 100%;
+    height: 50px;
+    font-size: 10.5px;
+
+    display: flex;
+    align-items: center;
+    justify-content: start;
+
+    color: white;
+}
+.upper-section .note-container .note-section {
+    width: 51px;
+    height: 100%;   
+
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    position: relative;
+
+}
+
+.upper-section .note-container .note-section-sharp {
+    width: 33.5px;
+    height: 100%;
+    left: 70%;
+    font-size: 10px;
+
+    position: absolute;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.upper-section .settings {
+    width: 100%;
+    height: 100%; 
+    margin-top: 50px;
+
+    display: flex;
+    align-items: start;
+    justify-content: center;
+}
+
+.upper-section .settings .settings-wrapper {
+    width: 100%;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.upper-section .settings .setting {
+    gap: 2rem;
+    display: flex;
+}
+
+.upper-section .settings .btn {
+    width: 70px;
+    height: 70px;
+    font-size: 1.3rem;
+    border-radius: 10px;
+
+    border: none;
+    background-color: white;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: .3s;
+}
+
+.upper-section .settings .hide-notes {font-size: 2.5rem;}
+
+/* Toggle Effects */
+
+.on {
+    background-color: var(--dark-pink-highlight) !important;
+    color: white;
+}
+.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.upper-section .settings .sound-settings {
+    flex-direction: column;
+}
+
+.upper-section .settings .upper-sec {    
+    gap: 2rem;
+
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.upper-section .settings .lower-sec {
+    border-radius: 10px;
+    height: 80px;
+    padding: 10px;  
+    gap: .5rem;
+
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.upper-section .settings .metronome-counter {
+    width: 150px;
+    height: 50%;
+
+    border: 1px solid var(--pink-highlight);
+    cursor: text;
+    text-align: center;
+}
+.upper-section .settings .apply-button {
+    width: 100%;
+    height: 40px;
+    border-radius: 10px;
+    font-size: 1rem;
+
+    border: none;
+    background-color: var(--pink-highlight);
+    color: white;
+    cursor: pointer;
+}
