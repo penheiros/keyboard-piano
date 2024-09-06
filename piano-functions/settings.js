@@ -1,11 +1,14 @@
+import {toggleVolume} from './script.js';
 
 const hideNotesButton = document.querySelector(".hide-notes");
 const hideKeysButton = document.querySelector(".hide-keys");
 const metronomeButton = document.querySelector(".metronome-button");
-const volumeButton = document.querySelector(".volume-button");
+export const volumeButton = document.querySelector(".volume-button");
+const volumeIcon = document.querySelector(".volume-icon");
 
 const notes = document.querySelector(".note-container");
 const keys = document.querySelectorAll(".note-label");
+
 
 function hideObject(button, object) {
     button.classList.add('on');
@@ -28,7 +31,6 @@ function showObject(button, object) {
     }
 }
 
-
 document.querySelector(".hide-notes").addEventListener("click", () => {
     if (hideNotesButton.classList.contains('on')) {
         showObject(hideNotesButton, notes);
@@ -44,3 +46,7 @@ document.querySelector(".hide-keys").addEventListener("click", () => {
         hideObject(hideKeysButton, keys);
     }
 });
+
+document.querySelector(".volume-button").addEventListener("click", () => {
+    toggleVolume();
+})

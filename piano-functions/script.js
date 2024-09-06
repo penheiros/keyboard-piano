@@ -1,9 +1,11 @@
 import {notes, keybindings} from "./data.js";
+import { volumeButton } from './settings.js';
 
 const audioContext = new (window.AudioContext)();
 const noteSounds = {};
 const noteBuffers = {};
 
+export let volumeLevel = 0.8;
 async function loadSample(note, url) {
     const response = await fetch(url);
     const arrayBuffer = await response.arrayBuffer();
@@ -41,8 +43,8 @@ function playNote(note) {
         gainNode.connect(audioContext.destination);
 
         // Set up volume control
-        gainNode.gain.setValueAtTime(0.4, audioContext.currentTime); // Initial volume
-        gainNode.gain.linearRampToValueAtTime(0.8, audioContext.currentTime + 0.1); // Hold volume for 100ms
+        gainNode.gain.setValueAtTime(volumeLevel, audioContext.currentTime); // Initial volume
+        gainNode.gain.linearRampToValueAtTime(volumeLevel, audioContext.currentTime + 0.1); // Hold volume for 100ms
         gainNode.gain.linearRampToValueAtTime(0, audioContext.currentTime + 0.9); // Fade-out over 100ms
 
         // Start playing the note
@@ -62,8 +64,6 @@ function playNote(note) {
 
     }
 }
-
-
 
 // Handle keyboard input 
 document.addEventListener("keydown", (e) => {
@@ -95,8 +95,14 @@ notes.forEach(note => {
     })
 })
 
-/*
-Todo: 
-- Add option to change colors
-- Good name title for the site and header
-*/
+// Volume control 
+ 
+export function toggleVolume() {
+    if (volumeButton.classList.contains('on')) {
+        volumeButton.classList.remove('on');
+        volumeLevel = 0.8;
+    } else {
+        volumeButton.classList.add('on');
+        volumeLevel = 0.3;
+    }
+}
