@@ -96,13 +96,14 @@ notes.forEach(note => {
 })
 
 // Volume control 
- 
 export function toggleVolume() {
     if (volumeButton.classList.contains('on')) {
         volumeButton.classList.remove('on');
+        volumeButton.dataset.attr = "Lower Volume";
         volumeLevel = 0.8;
     } else {
         volumeButton.classList.add('on');
+        volumeButton.dataset.attr = "Increase Volume";
         volumeLevel = 0.3;
     }
 }

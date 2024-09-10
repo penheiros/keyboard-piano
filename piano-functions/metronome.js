@@ -62,12 +62,14 @@ document.querySelector(".metronome-button").addEventListener("click", () => {
     if (metronomeButton.classList.contains('on')) {
 
         metronomeButton.classList.remove('on');
+        metronomeButton.dataset.attr = "Metronome (Off)";
         stopMetronome();
         toggleMetronomeController();
 
     } else {
 
         metronomeButton.classList.add('on');
+        metronomeButton.dataset.attr = "Metronome (On)";
         startMetronome();
         toggleMetronomeController();
     }

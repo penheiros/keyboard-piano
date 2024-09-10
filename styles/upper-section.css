@@ -107,6 +107,7 @@
     align-items: center;
     justify-content: center;
 }
+
 .upper-section .settings .lower-sec {
     border-radius: 10px;
     height: 80px;
@@ -129,6 +130,7 @@
     cursor: text;
     text-align: center;
 }
+
 .upper-section .settings .apply-button {
     width: 100%;
     height: 40px;
@@ -139,4 +141,39 @@
     background-color: var(--pink-highlight);
     color: white;
     cursor: pointer;
+}
+
+/* Hover Effects */
+
+.upper-section .settings .btn {
+    position: relative;
+}
+.upper-section .settings .btn::before {
+    width: 0;
+    height: 50px;
+    font-size: 1.3rem;
+    top: -120px;
+    left: 0;
+    
+    background-color: var(--black-highlight);
+    color: white; 
+
+    position: absolute;
+    content: '';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: .3s;
+}
+
+.upper-section .settings .btn:hover::before {
+    padding: 5px 20px 5px 20px;
+    width: 125px;
+    height: 50px;
+    top: -120px;
+    left: 0;
+
+    position: absolute;
+    content: attr(data-attr);
 }

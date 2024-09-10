@@ -1,9 +1,9 @@
 import {toggleVolume} from './script.js';
+export const volumeButton = document.querySelector(".volume-button");
 
 const hideNotesButton = document.querySelector(".hide-notes");
 const hideKeysButton = document.querySelector(".hide-keys");
 const metronomeButton = document.querySelector(".metronome-button");
-export const volumeButton = document.querySelector(".volume-button");
 const volumeIcon = document.querySelector(".volume-icon");
 
 const notes = document.querySelector(".note-container");
@@ -21,7 +21,7 @@ function hideObject(button, object) {
 }
 
 function showObject(button, object) {
-    button.classList.remove('on');    
+    button.classList.remove('on');
     button.style.background = 'white';
 
     if(object === notes) {
@@ -34,16 +34,21 @@ function showObject(button, object) {
 document.querySelector(".hide-notes").addEventListener("click", () => {
     if (hideNotesButton.classList.contains('on')) {
         showObject(hideNotesButton, notes);
+        hideNotesButton.dataset.attr = "Hide Notes";
     } else {
         hideObject(hideNotesButton, notes);
+        hideNotesButton.dataset.attr = "Show Notes";
     }
 });
 
 document.querySelector(".hide-keys").addEventListener("click", () => {
     if (hideKeysButton.classList.contains('on')) {
         showObject(hideKeysButton, keys);
-    } else {
+        hideKeysButton.dataset.attr = "Hide Keys";
+
+    } else {        
         hideObject(hideKeysButton, keys);
+        hideKeysButton.dataset.attr = "Show Keys";
     }
 });
 
