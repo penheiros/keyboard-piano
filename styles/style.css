@@ -50,3 +50,19 @@ body {
     font-size: 4rem;
     margin: 0;
 }
+
+@media screen and (max-width: 768px) {
+  .piano {
+    display: none !important;
+  }
+  .container {text-align: center !important;}
+  .container::after {
+    text-align: center;
+    content: 'This application is not supported on small screen devices, please use a larger screen.';
+    width: 500px;
+    height: 500px;
+    font-weight: 500;
+    font-size: 1rem;
+    line-break: auto !important;
+  }
+}
